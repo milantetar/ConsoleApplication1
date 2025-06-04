@@ -30,7 +30,7 @@ int main() {
 	std::getline(std::cin >> std::ws, quote);
 	std::cout << "Your favorite quote is: " << quote << '\n';
 	return 0;
-	string milan();
+	string milan(string fightclub);
 }
 
 namespace milan 
