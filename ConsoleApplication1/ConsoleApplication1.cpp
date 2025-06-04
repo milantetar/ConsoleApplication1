@@ -1,28 +1,45 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main()
-{ 
-	// This program demonstrates the use of variables and input/output in C++
-	double var1; // Double variable declaration
-	double var2; // Another double variable declaration
+int main() {
+	double x = (int) 3.14;
+	std::cout << "The value of x is: " << x << '\n';
+	char y = 300;
+	std::cout << "The value of y is: " << y <<'\n';
+	int corrects = 8;
+	int questions = 10;
+	double score = corrects / (double)questions * 100.0;
+	std::cout << "The score is: " << score << "%"<< '\n';
 
-	cout << "Enter Var 1 :"  << endl; // Output an empty line
-	cin >> var1; // Input for var1
-	cout << "Enter Var 2 :" << endl; // Output an empty line	
-	cin >> var2; // Input for var2s
-	
-	double sum;// Declare a variable to hold the sum of var1 and var2
-	sum = var1 + var2; // Calculate the sum of var1 and var2
-	double difference; // Declare a variable to hold the difference of var1 and var2
-	difference = var1 - var2; // Calculate the difference between var1 and var2
+	// Using std::cin to read a string input
+	std::string name;
+	std::cout << "Enter your name: " <<'\n';
+	std::getline(std::cin >> std::ws, name);
+	std::cout << "Hello, " << name << "!\n";
 
-	cout << "The sum of Var 1 and Var 2 is: " << sum << endl; // Output the sum of var1 and var2
-	cout << "The difference of Var 1 and Var 2 is: " << difference << endl; // Output the difference of var1 and var2	
-	cout << "The product of Var 1 and Var 2 is: " << var1 * var2 << endl; // Output the product of var1 and var2
-	cout << "The quotient of Var 1 and Var 2 is: " << var1 / var2 << endl; // Output the quotient of var1 and var2
-	cout << "The modulus of Var 1 and Var 2 is: " << static_cast<int>(var1) % static_cast<int>(var2) << endl; // Output the modulus of var1 and var2
-	cout << "The square of Var 1 is: " << var1 * var1 << endl; // Output the square of var1
+	// Using std::cin to read an integer input
+	int age; 
+	std::cout << "Enter your age: \n";
+	std::cin >> age;
+	std::cout << "you are " << age << " years old \n";
+
+	// Using std::getline to read a full line including spaces
+	std::string quote;
+	std::cout << "Enter your favorite quote: " << '\n';
+	std::getline(std::cin >> std::ws, quote);
+	std::cout << "Your favorite quote is: " << quote << '\n';
 	return 0;
+	string milan();
+}
 
+namespace milan 
+{
+	string milan() {
+		string milan;
+		cout << "enter int milan : ";
+		cin >> milan ;
+		cout << " int milan is : " << milan;
+		return milan;
+	}
 }
