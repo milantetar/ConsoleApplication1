@@ -223,7 +223,7 @@ int main() {
 		break;
 	}
 	std::cout << "********************************************" << '\n';
-
+	
 	//program to make a marks grade calculator using ternary operator
 	double grade;
 	std::cout << "Enter your marks: " << '\n';
@@ -233,5 +233,15 @@ int main() {
 			(grade >= 70 ? std::cout << "your grade is C" :
 				(grade >= 60 ? std::cout << "your grade is D" :
 					std::cout << "you failed")))) << '\n';
-					return 0;
+	
+
+	// Program to check if a number is even or odd using the ternary operator
+	int number;
+	std::cout << " Enter a number: " << '\n';
+	std::cin >> number;
+
+	(number == 0 ? std::cout << "The number is zero." << '\n' :
+		(number % 2 == 0 ? std::cout << "The number is even." << '\n' : std::cout << "The number is odd." << '\n'));
+	return 0;
 }
+
