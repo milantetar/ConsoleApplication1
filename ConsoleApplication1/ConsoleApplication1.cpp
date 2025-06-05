@@ -2,6 +2,7 @@
 #include <string>
 #include <cmath>
 #include <algorithm>
+#include "ConsoleApplication1.h"
 
 int main() {
 	// Output a simple message
@@ -133,32 +134,32 @@ int main() {
 	}
 
 
-	////another switch statement example to determine the grade of students
-	//char grade;
-	//std::cout << "Enter your grade: " << '\n';
-	//std::cin >> grade;
-	//switch (grade) {
-	//case 'A':
-	//	std::cout << "great'\n'";
-	//	break;
-	//case 'B':
-	//	std::cout << "Excellent!" << '\n';
-	//	break;
-	//case 'C':
-	//	std::cout << "Very Good!" << '\n';
-	//	break;
-	//case 'D':
-	//	std::cout << "Good!" << '\n';
-	//	break;
-	//case 'F':
-	//	std::cout << "You failed!" << '\n';
-	//	break;
-	//default:
-	//	std::cout << "Invalid grade. Please enter a valid grade (A, B, C, D, F)." << '\n';
-	//	break;
-	//}
+	//another switch statement example to determine the grade of students
+    char grade1 = '\0'; // Initialize grade1 to a default value
+	std::cout << "Enter your grade: " << '\n';
+	std::cin >> grade1;
+	switch (grade1) {
+	case 'A':
+		std::cout << "great'\n'";
+		break;
+	case 'B':
+		std::cout << "Excellent!" << '\n';
+		break;
+	case 'C':
+		std::cout << "Very Good!" << '\n';
+		break;
+	case 'D':
+		std::cout << "Good!" << '\n';
+		break;
+	case 'F':
+		std::cout << "You failed!" << '\n';
+		break;
+	default:
+		std::cout << "Invalid grade. Please enter a valid grade (A, B, C, D, F)." << '\n';
+		break;
+	}
 
-	// making a simple calculator using switch statement
+	//making a simple calculator using switch statement
 
 	char op;
 	double num1, num2;
@@ -223,7 +224,7 @@ int main() {
 		break;
 	}
 	std::cout << "********************************************" << '\n';
-
+	
 	//program to make a marks grade calculator using ternary operator
 	double grade;
 	std::cout << "Enter your marks: " << '\n';
@@ -233,5 +234,49 @@ int main() {
 			(grade >= 70 ? std::cout << "your grade is C" :
 				(grade >= 60 ? std::cout << "your grade is D" :
 					std::cout << "you failed")))) << '\n';
-					return 0;
+	
+
+	// Program to check if a number is even or odd using the ternary operator
+	int number;
+	std::cout << " Enter a number: " << '\n';
+	std::cin >> number;
+
+	(number == 0 ? std::cout << "The number is zero." << '\n' :
+		(number % 2 == 0 ? std::cout << "The number is even." << '\n' : std::cout << "The number is odd." << '\n'));
+
+	// program to check if a number is positive, negative, or zero using the ternary operator
+	int num;
+	std::cout << "Enter a number: " << '\n';
+	std::cin >> num;
+	(num>0? std::cout << "The number is positive." << '\n' :
+		(num < 0 ? std::cout << "The number is negative." << '\n' : std::cout << "The number is zero." << '\n'));
+
+	//program to convert temperature from Celsius to Fahrenheit using the switch statement
+	double Temp;
+	char unit;
+	std::cout << "********************** Temperature conversion ***********************" << '\n';
+	std::cout << " F = Fahrenheit," << '\n' << " C = Celsius" << '\n';
+	std::cout << "Enter the temperature unit (F or C): " << '\n';
+	std::cin >> unit;
+	std::cout << "What unit would you like to convert to :";
+	
+	if(unit == 'C' || unit == 'c') {
+		std::cout << "Enter temperature in Celsius: " << '\n';
+		std::cin >> Temp;
+		Temp = (Temp * 9.0 / 5.0) + 32.0;
+		std::cout << "Temperature in Fahrenheit: " << Temp << "\u00B0F" << '\n';
+	}
+	else if (unit == 'F' || unit == 'f') {
+		std::cout << "Enter temperature in Fahrenheit: " << '\n';
+		std::cin >> Temp;
+		Temp = (Temp - 32.0) * 5.0 / 9.0;
+		std::cout << "Temperature in Celsius: " << Temp << "\u00B0C" << '\n';
+	}
+	else
+	{
+		std::cout << "Invalid unit Please Enter C or F.";
+	}
+	std::cout << "*********************************************************************" << '\n';
+	return 0;
 }
+
