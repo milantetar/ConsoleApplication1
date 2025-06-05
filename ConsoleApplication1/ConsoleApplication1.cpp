@@ -244,6 +244,7 @@ int main() {
 	(number == 0 ? std::cout << "The number is zero." << '\n' :
 		(number % 2 == 0 ? std::cout << "The number is even." << '\n' : std::cout << "The number is odd." << '\n'));
 
+
 	// program to check if a number is positive, negative, or zero using the ternary operator
 	int num;
 	std::cout << "Enter a number: " << '\n';
@@ -277,6 +278,7 @@ int main() {
 		std::cout << "Invalid unit Please Enter C or F.";
 	}
 	std::cout << "*********************************************************************" << '\n';
+
 	return 0;
 }
 
