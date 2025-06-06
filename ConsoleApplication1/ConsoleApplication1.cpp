@@ -279,16 +279,54 @@ int main() {
 	}
 	std::cout << "*********************************************************************" << '\n';
 
-	return 0;
 	
 
 	// Program to check if a number is even or odd using the ternary operator
-	int number;
+	int number1;
 	std::cout << " Enter a number: " << '\n';
-	std::cin >> number;
+	std::cin >> number1;
 
 	(number == 0 ? std::cout << "The number is zero." << '\n' :
 		(number % 2 == 0 ? std::cout << "The number is even." << '\n' : std::cout << "The number is odd." << '\n'));
+
+	//program to compress a string using a simple compression algorithm
+	
+	std::string inputString;
+	std::cout << "Enter a string to compress: " << '\n';
+	std::getline(std::cin, inputString);
+
+	int count = 1;
+	
+	for (size_t i = 1; i < inputString.length(); ++i)
+	{
+		if(inputString[i] == inputString[i - 1]) {
+			count++;
+		} else {
+			std::cout << inputString[i - 1] << count;
+			count = 1; // Reset count for the next character
+		}
+	}
+	if (count > 0) {
+		std::cout << inputString.back() << count; // Output the last character and its count
+	}
+	std::cout << '\n';
+
+	std::cout << "String compression complete." << '\n';
+
+	// Program to check if a number is prime or not
+
+	int numToCheck;	
+	std::cout << "Enter a number to check if it is prime: " << '\n';
+	std::cin >> numToCheck;
+	bool isPrime = true;
+	for (int i = 2; i <= sqrt(numToCheck); ++i) {
+		if (numToCheck % i == 0) {
+			isPrime = false;
+			break;
+		}
+	}
+
 	return 0;
+	
 }
 
