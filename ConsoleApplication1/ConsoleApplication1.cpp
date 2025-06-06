@@ -2,6 +2,7 @@
 #include <string>
 #include <cmath>
 #include <algorithm>
+#include "ConsoleApplication1.h"
 
 int main() {
     //// Casting double to int
@@ -290,10 +291,10 @@ int main() {
 
 	// For loop example
     
-    for(int i = 0.0; i >= 10.0; i++)
-    {
-        std::cout << "The value of i is: " << i << '\n';
-	}
+for (double i = 1; i <= 10; i/=1)
+{
+	std::cout << i << '\n';
+}
 
 	return 0;
 }
