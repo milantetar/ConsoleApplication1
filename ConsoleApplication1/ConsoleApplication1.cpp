@@ -3,9 +3,38 @@
 #include <ctime>
 #include <cmath>
 #include <algorithm>
+#include <cctype> 
 
+double squareArea(double length);
+double cubeVolume(double length);
+
+void clearInputBuffer() {
+    std::cin.clear(); // Clear any error flags
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard the input buffer
+}
+
+void printWelcomeMessage() {
+    std::cout << "Welcome to the C++ Console Application!\n";
+    std::cout << "This application demonstrates various C++ features.\n";
+}
+
+void printGoodbyeMessage() {
+    std::cout << "Thank you for using the C++ Console Application!\n";
+    std::cout << "Goodbye!\n";
+}
+
+void print(std::string,int age) {
+    std::string name = "dark";
+	std::cout << "Happy bitrthday to you \n";
+	std::cout << "Happy bitrthday to you \n";
+	std::cout << "Happy bitrthday dear "<< name << '\n';
+	std::cout << "Happy bitrthday to become "<< age << "\n";
+	
+}
+   
 
 int main() {
+
     //   // Casting double to int
     //   double x = (int)3.14;
     //   std::cout << "The value of x is: " << x << '\n';
@@ -300,74 +329,209 @@ int main() {
 
        //for loop example for a rectangle of particular char
 
-    int rows;
-    int columns;
-    char symbol;
-    std::cout << "*************** Rectangle Pattern ***************\n";
+ //   int rows;
+ //   int columns;
+ //   char symbol;
+ //   std::cout << "*************** Rectangle Pattern ***************\n";
 
-    do {
-        std::cout << "Enter the number of rows: ";
-        std::cin >> rows;
-    } while (rows <= 0 || rows == ' ' || rows == '\n' || rows == '\t');
+ //   do {
+ //       std::cout << "Enter the number of rows: ";
+ //       std::cin >> rows;
+ //   } while (rows <= 0 || rows == ' ' || rows == '\n' || rows == '\t');
 
-    do {
-        std::cout << "enter the number of columns: ";
-        std::cin >> columns;
-    } while (columns <= 0 || columns == ' ' || columns == '\n' || columns == '\t');
+ //   do {
+ //       std::cout << "enter the number of columns: ";
+ //       std::cin >> columns;
+ //   } while (columns <= 0 || columns == ' ' || columns == '\n' || columns == '\t');
 
-    do {
-        std::cout << "Enter the symbol to use: ";
-        std::cin >> symbol;
-    } while (symbol == ' ' || symbol == '\n' || symbol == '\t');
+ //   do {
+ //       std::cout << "Enter the symbol to use: ";
+ //       std::cin >> symbol;
+ //   } while (symbol == ' ' || symbol == '\n' || symbol == '\t');
 
-    for (int i = 1; i <= rows; i++)
-    {
-        for (int j = 1; j <= columns; j++)
-        {
-            std::cout << symbol;
-        }
-        std::cout << "\n";
-    }
-
-
-    std::cout << "*************************************************\n";
+ //   for (int i = 1; i <= rows; i++)
+ //   {
+ //       for (int j = 1; j <= columns; j++)
+ //       {
+ //           std::cout << symbol;
+ //       }
+ //       std::cout << "\n";
+ //   }
 
 
-    // For loop example for multiplication table
-    int num;
-    std::cout << "Enter a number for multiplication table: ";
-    std::cin >> num;
-    std::cout << "Multiplication table for " << num << ":\n";
-    for (int i = 1; i <= 10; ++i) {
-        std::cout << num << " x " << i << " = " << num * i << '\n';
-    }
+ //   std::cout << "*************************************************\n";
 
-    // Random number generation
-    int number = rand();
-    std::cout << "Random number generated: " << number << '\n';
 
-    // passing dice game number of times
-    int diceRolls;
-    std::cout << "Enter the number of times to roll the dice: ";
-    std::cin >> diceRolls;
-    for (int i = 0; i < diceRolls; ++i) {
-        int diceRoll = rand() % 6 + 1; // Random number between 1 and 6
-        std::cout << "Dice roll " << (i + 1) << ": " << diceRoll << '\n';
-    }
+ //   // For loop example for multiplication table
+ //   int num;
+ //   std::cout << "Enter a number for multiplication table: ";
+ //   std::cin >> num;
+ //   std::cout << "Multiplication table for " << num << ":\n";
+ //   for (int i = 1; i <= 10; ++i) {
+ //       std::cout << num << " x " << i << " = " << num * i << '\n';
+ //   }
+
+ //   // Random number generation
+ //   int number = rand();
+ //   std::cout << "Random number generated: " << number << '\n';
+
+ //   // passing dice game number of times
+ //   int diceRolls;
+ //   std::cout << "Enter the number of times to roll the dice: ";
+ //   std::cin >> diceRolls;
+ //   for (int i = 0; i < diceRolls; ++i) {
+ //       int diceRoll = rand() % 6 + 1; // Random number between 1 and 6
+ //       std::cout << "Dice roll " << (i + 1) << ": " << diceRoll << '\n';
+ //   }
+ // 
+ //   // String comparison
+ //   std::string str1, str2;
+ //   std::cout << "Enter first string: ";
+ //   std::getline(std::cin >> std::ws, str1);
+ //   std::cout << "Enter second string: ";
+ //   std::getline(std::cin >> std::ws, str2);
+ //   if (str1 == str2) {
+ //       std::cout << "The strings are equal.\n";
+ //   } else {
+ //       std::cout << "The strings are not equal.\n";
+ //   }
+ //   // String length
+ //   std::cout << "Length of first string: " << str1.length() << '\n';
+	//std::cout << "Length of second string: " << str2.length() << '\n';
+ //   
+
+    print("milan", 20);
+	printWelcomeMessage();
+    srand(time(NULL));
+
+	//// Random number generation with seed
+	//int ranNum = rand() % 5 + 1; // Random number between 1 and 5
+ //   switch (ranNum) {
+ //   case 1: std::cout << "you won a bumper sticker";
+	//	break;
+ //   case 2: std::cout << "you won a t-shirt";
+	//	break;
+ //   case 3: std::cout << "you won a headphone";
+	//	break;
+ //   case 4: std::cout << "you won a Bluetooth speaker";
+	//	break;
+ //   case 5: std::cout << "you won a car";
+	//	break;
+	//default: std::cout << "No prize for you!\n"; break;
+ //       break;
+ //   
+ //   }
+
+	//std::cout << "\nThank you for playing!\n";
+
+ //   //coin flip game C++
+
+ //   char choice;
+	//std::cout << "Welcome to the Coin Flip Game!\n";
+	//std::cout << "Choose your side (H for Heads, T for Tails): ";
+	//std::cin >> choice;
+	//std::cout << "Flipping the coin...\n";
+
+	//choice = toupper(choice); // Convert to uppercase for consistency
+
+ //   if (choice != 'H' && choice != 'T') {
+ //       std::cout << "Invalid choice! Please enter H or T.\n";
+ //   }
+ //   else
+ //   {
+	//	char coinSide = (rand() % 2 == 0) ? 'H' : 'T'; // Randomly choose Heads or Tails
+ //       std::cout << "The coin landed on: " << coinSide << '\n';
+ //       if (choice == coinSide) {
+ //           std::cout << "Congratulations! You guessed correctly!\n";
+ //       } else {
+ //           std::cout << "Sorry, you guessed wrong. Better luck next time!\n";
+	//	}
+ //   }
+ //   std::cout << "Thanks for playing the game";
+
+	////number guessing game where you can set the number in beetween C++
+
+ //   int guesNum;
+ //   int guess;
+ //   int tries{};
+	//int usernum;
+
+	//std::cout << "Enter the maximum number for the guessing game : ";
+	//std::cin >> usernum;
+ //   
+ //   guesNum = rand() % usernum + 1;
+
+
+	//std::cout << "\nWelcome to the Number Guessing Game!\n";
+ //   do {
+ //       std::cout << "I have selected a number between 1 and " << usernum <<'\n';
+ //       std::cin >> guess;
+ //       tries++;
+
+ //       if(guess > guesNum)
+ //       {
+ //           std::cout << "your guess is too high,try again.\n";
+ //       }
+ //       else if(guess < guesNum)
+ //       {
+ //           std::cout << "your guess is too low,try again.\n";
+ //       }
+ //       else
+ //       {
+ //           std::cout << "Congratulations! You guessed the number " << tries << " in " << tries << " tries!\n";
+	//	}
+
+	//} while (guess != guesNum);
+
+	//std::cout << "Thank you for playing the Number Guessing Game!\n";
+	//
   
-    // String comparison
-    std::string str1, str2;
-    std::cout << "Enter first string: ";
-    std::getline(std::cin >> std::ws, str1);
-    std::cout << "Enter second string: ";
-    std::getline(std::cin >> std::ws, str2);
-    if (str1 == str2) {
-        std::cout << "The strings are equal.\n";
-    } else {
-        std::cout << "The strings are not equal.\n";
+    
+	//function to calculate area of square
+    char option;
+    double Length;
+	
+   // Validate input
+   
+    
+    std::cout << "Please enter a positive length in cm: ";
+    std::cin >> Length;
+
+    do {
+        std::cout << "Please enter a positive length in cm: ";
+        std::cin >> Length;
+        if (std::cin.fail() || Length < 0) {
+            std::cout << "Invalid input. Please enter a positive number.\n";
+            clearInputBuffer();
+        }
+    } while (std::cin.fail() || Length < 0);
+
+
+	std::cout << "You entered: " << Length << " cm\n";
+	std::cout << "you want to rather calculate the area of a square or cube? (s/c): ";
+	std::cin >> option;
+    option = tolower(option); // Convert to lowercase for consistency
+    if (option == 'c') {
+        std::cout << "Calculating area of a cube...\n";
+        double Volume = cubeVolume(Length);
+        std::cout << "The Volume of the cube with length " << Length << " is: " << Volume << "cm ^ 3\n";
     }
-    // String length
-    std::cout << "Length of first string: " << str1.length() << '\n';
-	std::cout << "Length of second string: " << str2.length() << '\n';
- return 0;
+    else if (option == 's') {
+        // Calculate area using the function
+        double area = squareArea(Length);
+        std::cout << "The area of the square with length " << Length << " is: " << area << "cm ^ 2\n";
+    }
+    else {
+        std::cout << "Invalid option. Please enter 's' for square or 'c' for cube.\n";
+	}
+
+	printGoodbyeMessage();
+    return 0;
+}
+
+double squareArea(double length) {
+    return length * length;
+}
+double cubeVolume(double length) {
+    return length * length * length;
 }
