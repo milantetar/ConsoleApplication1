@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <cctype> 
 
+double getTotal(double numbers[], int size);
+int searcharray(int numbers[], int size, int element);
 
 int main() {
     //   // Casting double to int
@@ -378,7 +380,6 @@ int main() {
 
 
 	//print("milan", 20);
-	printWelcomeMessage();
 	//srand(time(NULL));
 
 	//// Random number generation with seed
@@ -540,92 +541,82 @@ int main() {
 	//std::cout << "My Num is " << myNum << '\n';
 
 	//printNum(myNum); // Call function to print myNum
-	
-	//Example of array
-	std::string cars[] = { "bmw","maruti","hyudai"};
-	std::string Songs[3];
 
-	Songs[0] = "Song 1: Imagine by John Lennon";
-	Songs[1] = "Song 2: Bohemian Rhapsody by Queen";
-	Songs[2] = "Song 3: Stairway to Heaven by Led Zeppelin";
+	////Example of array
+	//std::string cars[] = { "bmw","maruti","hyudai"};
+	//std::string Songs[3];
 
-	std::cout << Songs[0] << '\n';
-	std::cout << Songs[1] << '\n';
-	std::cout << Songs[2] << '\n';
-	
-	std::cout << "my cars is a " << cars[0] << '\n';
-	std::cout << "my cars is a " << cars[1] << '\n';
-	std::cout << "my cars is a " << cars[2] << '\n';
+	//Songs[0] = "Song 1: Imagine by John Lennon";
+	//Songs[1] = "Song 2: Bohemian Rhapsody by Queen";
+	//Songs[2] = "Song 3: Stairway to Heaven by Led Zeppelin";
 
+	//std::cout << Songs[0] << '\n';
+	//std::cout << Songs[1] << '\n';
+	//std::cout << Songs[2] << '\n';
+	//
+	//std::cout << "my cars is a " << cars[0] << '\n';
+	//std::cout << "my cars is a " << cars[1] << '\n';
+	//std::cout << "my cars is a " << cars[2] << '\n';
 
-    int rows;
-    int columns;
-    char symbol;
-    std::cout << "*************** Rectangle Pattern ***************\n";
+	 //iterate over an array
 
-    do {
-        std::cout << "Enter the number of rows: ";
-        std::cin >> rows;
-    } while (rows <= 0 || rows == ' ' || rows == '\n' || rows == '\t');
+std::string students[] = { "Mr.crab","spongebob", "patrick", "sandy", "squidward", "plankton" };
 
-    do {
-        std::cout << "enter the number of columns: ";
-        std::cin >> columns;
-    } while (columns <= 0 || columns == ' ' || columns == '\n' || columns == '\t');
+for (int i = 0; i < sizeof(students) / sizeof(std::string); i++)
+{
+	std::cout << students[i] << '\n';
+}
 
-    do {
-        std::cout << "Enter the symbol to use: ";
-        std::cin >> symbol;
-    } while (symbol == ' ' || symbol == '\n' || symbol == '\t');
+for (std::string students : students)
+{
+	std::cout << students << '\n';
+}
 
-    for (int i = 1; i <= rows; i++)
-    {
-        for (int j = 1; j <= columns; j++)
-        {
-            std::cout << symbol;
-        }
-        std::cout << "\n";
-    }
+double numbers[] = { 1.2, 2.3, 3.4, 4.5, 5.6 };
+int size = sizeof(numbers) / sizeof(double);
+double total = getTotal(numbers, size);
+std::cout << "The total of the numbers is: $ " << total << '\n';
 
 
-    std::cout << "*************************************************\n";
+int numbers1[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+int size1 = sizeof(numbers1) / sizeof(numbers1[0]);
+int index;
+int myNum;
+std::cout << "Enter the index of the number you want to access (0-9): ";
+std::cin >> myNum;
 
+index = searcharray(numbers1, size1, myNum);
 
-    // For loop example for multiplication table
-    int num;
-    std::cout << "Enter a number for multiplication table: ";
-    std::cin >> num;
-    std::cout << "Multiplication table for " << num << ":\n";
-    for (int i = 1; i <= 10; ++i) {
-        std::cout << num << " x " << i << " = " << num * i << '\n';
-    }
+if (index != -1)
+{
+	std::cout << "The number at index " << myNum << " is: " << numbers1[index] << '\n';
+}
+else
+{
+	std::cout << "Number not found at index " << myNum << '\n';
+}
 
-    // Random number generation
-    int number = rand();
-    std::cout << "Random number generated: " << number << '\n';
+return 0;s
+}
+int searcharray(int numbers[], int size, int element)
+{
+	for (int i = 0; i < size; i++)
+	{
+		if (numbers[i] == element)
+		{
+			return i;
+		}
 
-    // passing dice game number of times
-    int diceRolls;
-    std::cout << "Enter the number of times to roll the dice: ";
-    std::cin >> diceRolls;
-    for (int i = 0; i < diceRolls; ++i) {
-        int diceRoll = rand() % 6 + 1; // Random number between 1 and 6
-        std::cout << "Dice roll " << (i + 1) << ": " << diceRoll << '\n';
-    }
-  
-    // String comparison
-    std::string str1, str2;
-    std::cout << "Enter first string: ";
-    std::getline(std::cin >> std::ws, str1);
-    std::cout << "Enter second string: ";
-    std::getline(std::cin >> std::ws, str2);
-    if (str1 == str2) {
-        std::cout << "The strings are equal.\n";
-    } else {
-        std::cout << "The strings are not equal.\n";
-    }
-    // String length
-    std::cout << "Length of first string: " << str1.length() << '\n';
-	std::cout << "Length of second string: " << str2.length() << '\n';
- return 0;
+	}
+	return -1; 
+}
+
+double getTotal(double numbers[], int size)
+{
+	double total = 0.0;
+	for (int i = 0; i < size; i++)
+	{
+		total += numbers[i];
+	}
+	return total;
 }
