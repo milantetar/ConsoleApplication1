@@ -5,41 +5,11 @@
 #include <algorithm>
 #include <cctype> 
 
-double pi = 3.145678959854268;
-void printNum(double myNum);
-void bakepizza();
-void bakepizza(std::string topping1);
-void bakepizza(std::string topping1, std::string topping2);
-std::string concatStrings(std::string string1, std::string string2);
-double squareArea(double length);
-double cubeVolume(double length);
-
-void clearInputBuffer() {
-	std::cin.clear(); // Clear any error flags
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard the input buffer
-}
-
-void printWelcomeMessage() {
-	std::cout << "Welcome to the C++ Console Application!\n";
-	std::cout << "This application demonstrates various C++ features.\n";
-}
-
-void printGoodbyeMessage() {
-	std::cout << "Thank you for using the C++ Console Application!\n";
-	std::cout << "Goodbye!\n";
-}
-
-void print(std::string, int age) {
-	std::string name = "dark";
-	std::cout << "Happy bitrthday to you \n";
-	std::cout << "Happy bitrthday to you \n";
-	std::cout << "Happy bitrthday dear " << name << '\n';
-	std::cout << "Happy bitrthday to become " << age << "\n";
-
-}
-
 
 int main() {
+    //   // Casting double to int
+    //   double x = (int)3.14;
+    //   std::cout << "The value of x is: " << x << '\n';
 
 	//// Casting double to int
 	//double x = (int)3.14;
@@ -588,57 +558,74 @@ int main() {
 	std::cout << "my cars is a " << cars[2] << '\n';
 
 
-	//Another example of array
-	double prices[] = {5.00,7.50,9.99,15.00};
-	std::string darkwebSE[3];
+    int rows;
+    int columns;
+    char symbol;
+    std::cout << "*************** Rectangle Pattern ***************\n";
 
-	darkwebSE[0] = "Silk road";
-	darkwebSE[1] = "AlphaBay";
-	darkwebSE[2] = "Dream Market";
+    do {
+        std::cout << "Enter the number of rows: ";
+        std::cin >> rows;
+    } while (rows <= 0 || rows == ' ' || rows == '\n' || rows == '\t');
 
-	std::cout << "Dark Web Search Engines:" << darkwebSE[0]<< '\n';
-	std::cout << "Dark Web Search Engines:" << darkwebSE[1]<< '\n';
-	std::cout << "Dark Web Search Engines:" << darkwebSE[2]<< '\n';
+    do {
+        std::cout << "enter the number of columns: ";
+        std::cin >> columns;
+    } while (columns <= 0 || columns == ' ' || columns == '\n' || columns == '\t');
 
-	std::cout << prices[0] << '\n';
-	std::cout << prices[1] << '\n';
-	std::cout << prices[2] << '\n';
-	std::cout << prices[3] << '\n';
+    do {
+        std::cout << "Enter the symbol to use: ";
+        std::cin >> symbol;
+    } while (symbol == ' ' || symbol == '\n' || symbol == '\t');
 
-	// Example of array size calculation
-	std::cout <<"Size of Array : " << sizeof(prices) <<'\n';
+    for (int i = 1; i <= rows; i++)
+    {
+        for (int j = 1; j <= columns; j++)
+        {
+            std::cout << symbol;
+        }
+        std::cout << "\n";
+    }
 
 
-	printGoodbyeMessage();
-	return 0;
+    std::cout << "*************************************************\n";
 
-}
 
-double squareArea(double length) {
-	return length * length;
-}
-double cubeVolume(double length) {
-	return length * length * length;
-}
+    // For loop example for multiplication table
+    int num;
+    std::cout << "Enter a number for multiplication table: ";
+    std::cin >> num;
+    std::cout << "Multiplication table for " << num << ":\n";
+    for (int i = 1; i <= 10; ++i) {
+        std::cout << num << " x " << i << " = " << num * i << '\n';
+    }
 
-std::string concatStrings(std::string string1, std::string string2) {
-	return string1 + " " + string2;
-}
+    // Random number generation
+    int number = rand();
+    std::cout << "Random number generated: " << number << '\n';
 
-void bakepizza() {
-	std::cout << "Here's Your burned pizza" << '\n';
-}
-
-void bakepizza(std::string topping1) {
-	std::cout << "Here 's your " << topping1 << " Pizza!" << '\n';
-}
-void bakepizza(std::string topping1, std::string topping2) {
-	std::cout << "Here 's your " << topping1 << " and " << topping2 << " Pizza! " << '\n';
-}
-
-void printNum(double myNum) {
-
-	std::cout << myNum <<'\n';
-	std::cout << pi << '\n';
-
+    // passing dice game number of times
+    int diceRolls;
+    std::cout << "Enter the number of times to roll the dice: ";
+    std::cin >> diceRolls;
+    for (int i = 0; i < diceRolls; ++i) {
+        int diceRoll = rand() % 6 + 1; // Random number between 1 and 6
+        std::cout << "Dice roll " << (i + 1) << ": " << diceRoll << '\n';
+    }
+  
+    // String comparison
+    std::string str1, str2;
+    std::cout << "Enter first string: ";
+    std::getline(std::cin >> std::ws, str1);
+    std::cout << "Enter second string: ";
+    std::getline(std::cin >> std::ws, str2);
+    if (str1 == str2) {
+        std::cout << "The strings are equal.\n";
+    } else {
+        std::cout << "The strings are not equal.\n";
+    }
+    // String length
+    std::cout << "Length of first string: " << str1.length() << '\n';
+	std::cout << "Length of second string: " << str2.length() << '\n';
+ return 0;
 }
