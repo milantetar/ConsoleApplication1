@@ -596,7 +596,7 @@ else
 	std::cout << "Number not found at index " << myNum << '\n';
 }
 
-return 0;s
+return 0;
 }
 int searcharray(int numbers[], int size, int element)
 {
